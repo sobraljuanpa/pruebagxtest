@@ -1,0 +1,450 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<GXtest.TestCaseCollection>
+	<TestCase>
+		<Name>Windows</Name>
+		<Status>true</Status>
+		<StartedAt>2021-01-14T12:03:08</StartedAt>
+		<ElapsedTime>25631</ElapsedTime>
+		<Browser>Chrome</Browser>
+		<ErrorMsg />
+		<Error />
+		<Items>
+			<Item>
+				<Type>Command</Type>
+				<Name>Maximize</Name>
+				<NameAndParams>Maximize()</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>159</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>Go</Name>
+				<NameAndParams>Go(https://the-internet.herokuapp.com/windows)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>3423</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>ClickByLinkText</Name>
+				<NameAndParams>ClickByLinkText(Click Here)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>624</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>SwitchWindow</Name>
+				<NameAndParams>SwitchWindow(win_ser_1)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>7</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>ScriptEval</Name>
+				<NameAndParams>ScriptEval(document.title = 'tab#1';)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained>''</Obtained>
+				<Html />
+				<Info />
+				<Elapsed>4</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>GetTitle</Name>
+				<NameAndParams>GetTitle()</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained>'tab#1'</Obtained>
+				<Html />
+				<Info />
+				<Elapsed>7</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>Verify</Name>
+				<NameAndParams>Verify</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot>C:\Models\dev\CSharpModel\web\bin\gxtestScreenshot_Verify_20210114_120320.png</Screenshot>
+				<Obtained />
+				<Html>C:\Models\dev\CSharpModel\web\bin\gxtestHtml_Verify_20210114_120320.html</Html>
+				<Info />
+				<Elapsed>348</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>SwitchWindow</Name>
+				<NameAndParams>SwitchWindow(win_ser_local)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>17</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>ClickByLinkText</Name>
+				<NameAndParams>ClickByLinkText(Click Here)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>612</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>SwitchWindow</Name>
+				<NameAndParams>SwitchWindow(win_ser_2)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>6</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>ScriptEval</Name>
+				<NameAndParams>ScriptEval(document.title = 'tab#2';)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained>''</Obtained>
+				<Html />
+				<Info />
+				<Elapsed>3</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>GetTitle</Name>
+				<NameAndParams>GetTitle()</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained>'tab#2'</Obtained>
+				<Html />
+				<Info />
+				<Elapsed>6</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>Verify</Name>
+				<NameAndParams>Verify</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot>C:\Models\dev\CSharpModel\web\bin\gxtestScreenshot_Verify_20210114_120324.png</Screenshot>
+				<Obtained />
+				<Html>C:\Models\dev\CSharpModel\web\bin\gxtestHtml_Verify_20210114_120324.html</Html>
+				<Info />
+				<Elapsed>333</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>SwitchWindow</Name>
+				<NameAndParams>SwitchWindow(win_ser_1)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>19</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>GetTitle</Name>
+				<NameAndParams>GetTitle()</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained>'tab#1'</Obtained>
+				<Html />
+				<Info />
+				<Elapsed>3</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>Verify</Name>
+				<NameAndParams>Verify</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot>C:\Models\dev\CSharpModel\web\bin\gxtestScreenshot_Verify_20210114_120325.png</Screenshot>
+				<Obtained />
+				<Html>C:\Models\dev\CSharpModel\web\bin\gxtestHtml_Verify_20210114_120325.html</Html>
+				<Info />
+				<Elapsed>312</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>SwitchWindow</Name>
+				<NameAndParams>SwitchWindow(win_ser_2)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>18</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>GetTitle</Name>
+				<NameAndParams>GetTitle()</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained>'tab#2'</Obtained>
+				<Html />
+				<Info />
+				<Elapsed>6</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>Verify</Name>
+				<NameAndParams>Verify</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot>C:\Models\dev\CSharpModel\web\bin\gxtestScreenshot_Verify_20210114_120325.png</Screenshot>
+				<Obtained />
+				<Html>C:\Models\dev\CSharpModel\web\bin\gxtestHtml_Verify_20210114_120326.html</Html>
+				<Info />
+				<Elapsed>353</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>SwitchWindow</Name>
+				<NameAndParams>SwitchWindow(win_ser_1)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>17</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>CloseWindow</Name>
+				<NameAndParams>CloseWindow(win_ser_1)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>26</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>SwitchWindow</Name>
+				<NameAndParams>SwitchWindow(win_ser_local)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>21</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>IsElementPresentByLinkText</Name>
+				<NameAndParams>IsElementPresentByLinkText(Clicgk Here)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained>false</Obtained>
+				<Html />
+				<Info />
+				<Elapsed>2010</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>Verify</Name>
+				<NameAndParams>Verify</NameAndParams>
+				<Result>ERROR</Result>
+				<Expected />
+				<Screenshot>C:\Models\dev\CSharpModel\web\bin\gxtestScreenshot_Verify_20210114_120328.png</Screenshot>
+				<Obtained />
+				<Html>C:\Models\dev\CSharpModel\web\bin\gxtestHtml_Verify_20210114_120329.html</Html>
+				<Info>Verify failed
+</Info>
+				<Elapsed>367</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>SwitchWindow</Name>
+				<NameAndParams>SwitchWindow(win_ser_2)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>20</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>GetTitle</Name>
+				<NameAndParams>GetTitle()</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained>'tab#2'</Obtained>
+				<Html />
+				<Info />
+				<Elapsed>3</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>Verify</Name>
+				<NameAndParams>Verify</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot>C:\Models\dev\CSharpModel\web\bin\gxtestScreenshot_Verify_20210114_120329.png</Screenshot>
+				<Obtained />
+				<Html>C:\Models\dev\CSharpModel\web\bin\gxtestHtml_Verify_20210114_120330.html</Html>
+				<Info />
+				<Elapsed>323</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>CloseWindow</Name>
+				<NameAndParams>CloseWindow(win_ser_2)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>26</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>SwitchWindow</Name>
+				<NameAndParams>SwitchWindow(win_ser_local)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained />
+				<Html />
+				<Info />
+				<Elapsed>10</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>IsElementPresentByLinkText</Name>
+				<NameAndParams>IsElementPresentByLinkText(Clikck Here)</NameAndParams>
+				<Result>OK</Result>
+				<Expected />
+				<Screenshot />
+				<Obtained>false</Obtained>
+				<Html />
+				<Info />
+				<Elapsed>2064</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+			<Item>
+				<Type>Command</Type>
+				<Name>Verify</Name>
+				<NameAndParams>Verify</NameAndParams>
+				<Result>ERROR</Result>
+				<Expected />
+				<Screenshot>C:\Models\dev\CSharpModel\web\bin\gxtestScreenshot_Verify_20210114_120332.png</Screenshot>
+				<Obtained />
+				<Html>C:\Models\dev\CSharpModel\web\bin\gxtestHtml_Verify_20210114_120333.html</Html>
+				<Info>Verify failed
+</Info>
+				<Elapsed>339</Elapsed>
+				<SourceLine />
+				<LineNumber>0</LineNumber>
+			</Item>
+		</Items>
+	</TestCase>
+</GXtest.TestCaseCollection>

@@ -1,0 +1,86 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1610983306771' stop='1610983331764'>
+    <name>[MOD-2019] AIA.org - 2030 directory search firm by name and verify information</name>
+    <title>[MOD-2019] AIA.org - 2030 directory search firm by name and verify information</title>
+    <test-cases>
+        <test-case start='1610983306771' status='passed' stop='1610983320814'>
+            <name>"before all" hook</name>
+            <title>"before all" hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.141'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1610983320814' status='passed' stop='1610983325065'>
+            <name>Should mousehover Architects menu on aia.org langing page</name>
+            <title>Should mousehover Architects menu on aia.org langing page</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.141'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1610983325065' status='passed' stop='1610983328155'>
+            <name>Should click on 2030 directory on Architects menu</name>
+            <title>Should click on 2030 directory on Architects menu</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.141'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1610983328155' status='failed' stop='1610983330720'>
+            <name>Should search the firm: GastingerWalker&amp; and verify it is present on the results</name>
+            <title>Should search the firm: GastingerWalker&amp; and verify it is present on the results</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.141'/>
+            </parameters>
+            <steps/>
+            <attachments>
+                <attachment title='Screenshot' source='0c80540b-14ca-40b4-b954-1e850762f501-attachment.png' type='image/png' size='119697'/>
+            </attachments>
+            <failure>
+                <message>The firm GastingerWalker&amp; was not displayed on the table: expected false to be true</message>
+                <stack-trace>AssertionError: The firm GastingerWalker&amp; was not displayed on the table: expected false to be true
+                    at Context.&lt;anonymous> (C:\repos\aia-automation\MOD\src\ui\specs\aia-org\2030-directory\MOD-2019.spec.js:36:157)
+                    at Context.executeSync (C:\repos\aia-automation\MOD\node_modules\@wdio\sync\build\index.js:56:18)
+                    at C:\repos\aia-automation\MOD\node_modules\@wdio\sync\build\index.js:82:70</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1610983330720' status='passed' stop='1610983331763'>
+            <name>Should search the firm: Alliiance and verify it is present on the results</name>
+            <title>Should search the firm: Alliiance and verify it is present on the results</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-87.0.4280.141'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,6 +1,7 @@
 package abstracta;
 
 import java.io.File;
+import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.transform.Transformer;
@@ -79,30 +80,30 @@ public class App
 
             Element labelsElement = newDoc.createElement("labels");
             testCaseElement.appendChild(labelsElement);
-            Element languageLabelElement = newDoc.createElement("label");
-            Attr nameAttr1 = newDoc.createAttribute("name");
-            nameAttr1.setValue("language");
-            languageLabelElement.setAttributeNode(nameAttr1);
-            Attr valueAttr1 = newDoc.createAttribute("value");
-            valueAttr1.setValue("javascript");
-            languageLabelElement.setAttributeNode(valueAttr1);
-            labelsElement.appendChild(languageLabelElement);
-            Element frameworkLabelElement = newDoc.createElement("label");
-            Attr nameAttr2 = newDoc.createAttribute("name");
-            nameAttr2.setValue("framework");
-            frameworkLabelElement.setAttributeNode(nameAttr2);
-            Attr valueAttr2 = newDoc.createAttribute("value");
-            valueAttr2.setValue("wdio");
-            frameworkLabelElement.setAttributeNode(valueAttr2);
-            labelsElement.appendChild(frameworkLabelElement);
-            Element threadLabelElement = newDoc.createElement("label");
-            Attr nameAttr3 = newDoc.createAttribute("name");
-            nameAttr3.setValue("thread");
-            threadLabelElement.setAttributeNode(nameAttr3);
-            Attr valueAttr3 = newDoc.createAttribute("value");
-            valueAttr3.setValue("0-0");
-            threadLabelElement.setAttributeNode(valueAttr3);
-            labelsElement.appendChild(threadLabelElement);
+            // Element languageLabelElement = newDoc.createElement("label");
+            // Attr nameAttr1 = newDoc.createAttribute("name");
+            // nameAttr1.setValue("language");
+            // languageLabelElement.setAttributeNode(nameAttr1);
+            // Attr valueAttr1 = newDoc.createAttribute("value");
+            // valueAttr1.setValue("javascript");
+            // languageLabelElement.setAttributeNode(valueAttr1);
+            // labelsElement.appendChild(languageLabelElement);
+            // Element frameworkLabelElement = newDoc.createElement("label");
+            // Attr nameAttr2 = newDoc.createAttribute("name");
+            // nameAttr2.setValue("framework");
+            // frameworkLabelElement.setAttributeNode(nameAttr2);
+            // Attr valueAttr2 = newDoc.createAttribute("value");
+            // valueAttr2.setValue("wdio");
+            // frameworkLabelElement.setAttributeNode(valueAttr2);
+            // labelsElement.appendChild(frameworkLabelElement);
+            // Element threadLabelElement = newDoc.createElement("label");
+            // Attr nameAttr3 = newDoc.createAttribute("name");
+            // nameAttr3.setValue("thread");
+            // threadLabelElement.setAttributeNode(nameAttr3);
+            // Attr valueAttr3 = newDoc.createAttribute("value");
+            // valueAttr3.setValue("0-0");
+            // threadLabelElement.setAttributeNode(valueAttr3);
+            // labelsElement.appendChild(threadLabelElement);
 
             Element paramsElement = newDoc.createElement("parameters");
             testCaseElement.appendChild(paramsElement);
@@ -149,5 +150,21 @@ public class App
             // </test-case>
             //TODO: handle exception
         }
+    }
+
+    public class TestSuite {
+        private int             start;
+        private int             stop;
+        private String          name;
+        private ArrayList<Test> tests = new ArrayList<>();
+    }
+
+    public class Test {
+        private int start;
+        private int stop;
+        private String name;
+        private String title;
+        private String status;
+        private String browser;
     }
 }

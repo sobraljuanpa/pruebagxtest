@@ -127,7 +127,7 @@ public class App
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(newDoc);
-            StreamResult result = new StreamResult(new File("testresults/prueba.xml"));
+            StreamResult result = new StreamResult(new File("testresults/1234-testsuite.xml"));
             transformer.transform(source, result);
 
             StreamResult consoleResult = new StreamResult(System.out);

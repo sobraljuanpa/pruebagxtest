@@ -14,4 +14,20 @@ public class TestSuite {
         this.stop = stop;
         this.tests = tests;
     }
+
+    public int getStart(){
+        return this.start;
+    }
+
+    public int getStop(){
+        return this.stop;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public ArrayList<Test> getTests(){
+        return this.tests;
+    }
 }

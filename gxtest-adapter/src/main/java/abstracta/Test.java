@@ -9,10 +9,34 @@ public class Test {
     private String browser;
 
     public Test(){
-        
+
     }
 
     public Test(int start, int stop, String name, String title, String status, String browser){
 
+    }
+
+    public int getStart(){
+        return this.start;
+    }
+
+    public int getStop(){
+        return this.stop;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public String getTitle(){
+        return this.title;
+    }
+
+    public String getStatus(){
+        return this.status;
+    }
+
+    public String getBrowser(){
+        return this.browser;
     }
 }

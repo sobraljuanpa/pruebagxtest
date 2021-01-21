@@ -8,6 +8,10 @@ public class Test {
     private String status;
     private String browser;
 
+    public Test(){
+        
+    }
+
     public Test(int start, int stop, String name, String title, String status, String browser){
 
     }

@@ -16,7 +16,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
-import org.w3c.dom.Element;
 
 public class App 
 {
@@ -37,35 +36,29 @@ public class App
                 String  browser = ((Element) sourceSuite).getElementsByTagName("Browser").item(0).getTextContent();
                 Node       node = sourceTestList.item(i);
                 Element element = (Element) node;
-                Test       test;
-                String   status = element.getElementsByTagName("Result").item(0).getTextContent();
                 
+                Test       test = new Test();
+                
+                String   status = element.getElementsByTagName("Result").item(0).getTextContent();
+                int     elapsed = Integer.parseInt(element.getElementsByTagName("Elapsed").item(0).getTextContent());
+                String     name = element.getElementsByTagName("Name").item(0).getTextContent();
+                String    title = element.getElementsByTagName("NameAndParams").item(0).getTextContent();
+                 
                 if(! status.equalsIgnoreCase("OK")){
                     status = "failed";
                 } 
                 else{
                     status = "passed";
                 }
+
+                test.setStatus(status);
+                test.setStart(0);
+                test.setStop(elapsed);
+                test.setName(name);
+                test.setTitle(title);
+                test.setBrowser(browser);
                 
-                if (i == 0) {
-                    test = new Test(
-                                0,
-                                Integer.parseInt(element.getElementsByTagName("Elapsed").item(0).getTextContent()),
-                                element.getElementsByTagName("Name").item(0).getTextContent(),
-                                element.getElementsByTagName("NameAndParams").item(0).getTextContent(),
-                                status,
-                                browser);    
-                }
-                else{
-                    test = new Test(
-                                0,
-                                Integer.parseInt(element.getElementsByTagName("Elapsed").item(0).getTextContent()),
-                                element.getElementsByTagName("Name").item(0).getTextContent(),
-                                element.getElementsByTagName("NameAndParams").item(0).getTextContent(),
-                                status,
-                                browser);
-                }
-                
+                System.out.println(test.toString());
                 tests.add(test);
             }
 
@@ -76,6 +69,83 @@ public class App
                 testSuiteElement.getElementsByTagName("Name").item(0).getTextContent(),
                 tests);
 
+            DocumentBuilder auxDocBuilder = dbFactory.newDocumentBuilder();
+            Document               output = auxDocBuilder.newDocument();
+
+            Element rootElement = output.createElement("ns2:test-suite");
+            output.appendChild(rootElement);
+            Attr attr = output.createAttribute("xmlns:ns2");
+            attr.setValue("urn:model.allure.qatools.yandex.ru");
+            rootElement.setAttributeNode(attr);
+            Attr startAttr = output.createAttribute("start");
+            startAttr.setValue(String.valueOf(testSuite.getStart()));
+            rootElement.setAttributeNode(startAttr);
+            Attr stopAttr = output.createAttribute("stop");
+            stopAttr.setValue(String.valueOf(testSuite.getStop()));
+            rootElement.setAttributeNode(stopAttr);
+            Element suiteNameElement = output.createElement("name");
+            suiteNameElement.appendChild(output.createTextNode(testSuite.getName()));
+            rootElement.appendChild(suiteNameElement);
+            Element suiteTitleElement = output.createElement("title");
+            suiteTitleElement.appendChild(output.createTextNode("A title for the test"));
+            rootElement.appendChild(suiteTitleElement);
+
+            Element testCasesElement = output.createElement("test-cases");
+            rootElement.appendChild(testCasesElement);
+
+            for (int i = 0; i < testSuite.getTests().size(); i++) {
+                Test auxTest = tests.get(i);
+
+                Element testCaseElement = output.createElement("test-case");
+                testCasesElement.appendChild(testCaseElement);
+                Attr startAttr1 = output.createAttribute("start");
+                startAttr1.setValue(String.valueOf(auxTest.getStart()));
+                testCaseElement.setAttributeNode(startAttr1);
+                Attr statusAttr = output.createAttribute("status");
+                statusAttr.setValue(auxTest.getStatus());
+                testCaseElement.setAttributeNode(statusAttr);
+                Attr stopAttr1 = output.createAttribute("stop");
+                stopAttr1.setValue(String.valueOf(auxTest.getStop()));
+                testCaseElement.setAttributeNode(stopAttr1);
+                Element nameElement = output.createElement("name");
+                nameElement.appendChild(output.createTextNode(auxTest.getName()));
+                testCaseElement.appendChild(nameElement);
+                Element titleElement = output.createElement("title");
+                titleElement.appendChild(output.createTextNode(auxTest.getTitle()));
+                testCaseElement.appendChild(titleElement);
+
+                Element labelsElement = output.createElement("labels");
+                testCaseElement.appendChild(labelsElement);
+
+                Element paramsElement = output.createElement("parameters");
+                testCaseElement.appendChild(paramsElement);
+                Element browserParamElement = output.createElement("parameter");
+                Attr kindAttr = output.createAttribute("kind");
+                kindAttr.setValue("argument");
+                browserParamElement.setAttributeNode(kindAttr);
+                Attr nameAttr = output.createAttribute("name");
+                nameAttr.setValue("browser");
+                browserParamElement.setAttributeNode(nameAttr);
+                Attr valueAttr = output.createAttribute("value");
+                valueAttr.setValue(auxTest.getBrowser());
+                browserParamElement.setAttributeNode(valueAttr);
+                paramsElement.appendChild(browserParamElement);
+
+                Element stepsElement = output.createElement("steps");
+                testCaseElement.appendChild(stepsElement);
+
+                Element attachmentsElement = output.createElement("attachments");
+                testCaseElement.appendChild(attachmentsElement);
+            }
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(output);
+            StreamResult result = new StreamResult(new File("testresults/12346-testsuite.xml"));
+            transformer.transform(source, result);
+
+            StreamResult consoleResult = new StreamResult(System.out);
+            transformer.transform(source, consoleResult);
         } catch (Exception e) {
             //TODO: handle exception
         }
@@ -118,46 +188,7 @@ public class App
             // rootElement.appendChild(testCasesElement);
 
 
-            // Element testCaseElement = newDoc.createElement("test-case");
-            // testCasesElement.appendChild(testCaseElement);
-            // Attr startAttr1 = newDoc.createAttribute("start");
-            // startAttr1.setValue("1000");
-            // testCaseElement.setAttributeNode(startAttr1);
-            // Attr statusAttr = newDoc.createAttribute("status");
-            // statusAttr.setValue("passed");
-            // testCaseElement.setAttributeNode(statusAttr);
-            // Attr stopAttr1 = newDoc.createAttribute("stop");
-            // stopAttr1.setValue("1050");
-            // testCaseElement.setAttributeNode(stopAttr1);
-            // Element nameElement = newDoc.createElement("name");
-            // nameElement.appendChild(newDoc.createTextNode("A name for the test"));
-            // testCaseElement.appendChild(nameElement);
-            // Element titleElement = newDoc.createElement("title");
-            // titleElement.appendChild(newDoc.createTextNode("A title for the test"));
-            // testCaseElement.appendChild(titleElement);
-
-            // Element labelsElement = newDoc.createElement("labels");
-            // testCaseElement.appendChild(labelsElement);
-
-            // Element paramsElement = newDoc.createElement("parameters");
-            // testCaseElement.appendChild(paramsElement);
-            // Element browserParamElement = newDoc.createElement("parameter");
-            // Attr kindAttr = newDoc.createAttribute("kind");
-            // kindAttr.setValue("argument");
-            // browserParamElement.setAttributeNode(kindAttr);
-            // Attr nameAttr = newDoc.createAttribute("name");
-            // nameAttr.setValue("browser");
-            // browserParamElement.setAttributeNode(nameAttr);
-            // Attr valueAttr = newDoc.createAttribute("value");
-            // valueAttr.setValue("chrome-87.0.4280.141");
-            // browserParamElement.setAttributeNode(valueAttr);
-            // paramsElement.appendChild(browserParamElement);
-
-            // Element stepsElement = newDoc.createElement("steps");
-            // testCaseElement.appendChild(stepsElement);
-
-            // Element attachmentsElement = newDoc.createElement("attachments");
-            // testCaseElement.appendChild(attachmentsElement);
+            
 
             // TransformerFactory transformerFactory = TransformerFactory.newInstance();
             // Transformer transformer = transformerFactory.newTransformer();

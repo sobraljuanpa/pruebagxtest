@@ -1,8 +1,5 @@
 package abstracta;
 
-import abstracta.Test;
-import abstracta.TestSuite;
-
 import java.io.File;
 import java.util.ArrayList;
 import javax.xml.parsers.DocumentBuilderFactory;

@@ -146,57 +146,6 @@ public class App
         } catch (Exception e) {
             //TODO: handle exception
         }
-    
-        try {
-            // File inputFile = new File("testresults/TestResults.xml");
-            // DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            // DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            // Document doc = dBuilder.parse(inputFile);
-            // doc.getDocumentElement().normalize();
-            // System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-            //NodeList nList = doc.getElementsByTagName("Item");
-            // System.out.println("----------------------------");
-            // System.out.println("there are " + nList.getLength() + " tests in the document");
-
-
-            // DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            // DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            // Document newDoc = dBuilder.newDocument();
-
-            // Element rootElement = newDoc.createElement("ns2:test-suite");
-            // newDoc.appendChild(rootElement);
-            // Attr attr = newDoc.createAttribute("xmlns:ns2");
-            // attr.setValue("urn:model.allure.qatools.yandex.ru");
-            // rootElement.setAttributeNode(attr);
-            // Attr startAttr = newDoc.createAttribute("start");
-            // startAttr.setValue("1000");
-            // rootElement.setAttributeNode(startAttr);
-            // Attr stopAttr = newDoc.createAttribute("stop");
-            // stopAttr.setValue("1050");
-            // rootElement.setAttributeNode(stopAttr);
-            // Element suiteNameElement = newDoc.createElement("name");
-            // suiteNameElement.appendChild(newDoc.createTextNode("A name for the test"));
-            // rootElement.appendChild(suiteNameElement);
-            // Element suiteTitleElement = newDoc.createElement("title");
-            // suiteTitleElement.appendChild(newDoc.createTextNode("A title for the test"));
-            // rootElement.appendChild(suiteTitleElement);
-
-            // Element testCasesElement = newDoc.createElement("test-cases");
-            // rootElement.appendChild(testCasesElement);
-
-
-            
-
-            // TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            // Transformer transformer = transformerFactory.newTransformer();
-            // DOMSource source = new DOMSource(newDoc);
-            // StreamResult result = new StreamResult(new File("testresults/1234-testsuite.xml"));
-            // transformer.transform(source, result);
-
-            // StreamResult consoleResult = new StreamResult(System.out);
-            // transformer.transform(source, consoleResult);  
-        } catch (Exception e) {
-        }
 
     }
 

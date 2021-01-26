@@ -3,7 +3,7 @@
 	<TestCase>
 		<Name>Windows</Name>
 		<Status>true</Status>
-		<StartedAt>2021-01-14T12:03:08</StartedAt>
+		<StartedAt>2021-01-14 12:03:08</StartedAt>
 		<ElapsedTime>25631</ElapsedTime>
 		<Browser>Chrome</Browser>
 		<ErrorMsg />

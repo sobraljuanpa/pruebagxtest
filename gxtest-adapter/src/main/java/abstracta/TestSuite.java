@@ -3,23 +3,23 @@ package abstracta;
 import java.util.ArrayList;
 
 public class TestSuite {
-    private int             start;
-    private int             stop;
+    private long             start;
+    private long             stop;
     private String          name;
     private ArrayList<Test> tests = new ArrayList<>();
 
-    public TestSuite(int start, int stop, String name, ArrayList<Test> tests){
+    public TestSuite(long start, long stop, String name, ArrayList<Test> tests){
         this.name = name;
         this.start = start;
         this.stop = stop;
         this.tests = tests;
     }
 
-    public int getStart(){
+    public long getStart(){
         return this.start;
     }
 
-    public int getStop(){
+    public long getStop(){
         return this.stop;
     }
 

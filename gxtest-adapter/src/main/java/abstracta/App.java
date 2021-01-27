@@ -2,6 +2,8 @@ package abstracta;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.UUID;
+
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.transform.Transformer;
@@ -13,12 +15,18 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class App 
 {
     public static void main( String[] args )
     {
         try {
+            File                  attachment = new File("testresults/screenshot.png");
+            UUID                        uuid = UUID.nameUUIDFromBytes(Files.readAllBytes(Paths.get(attachment.getAbsolutePath())));
+            attachment.renameTo(new File ("testresults/"+uuid.toString()+"-attachment.png"));
+            
             File                   inputFile = new File("testresults/TestResults.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder         dBuilder = dbFactory.newDocumentBuilder();
@@ -59,10 +67,14 @@ public class App
                 tests.add(test);
             }
 
+            String start = ((Element) sourceSuite).getElementsByTagName("StartedAt").item(0).getTextContent();
+            long   epoch = new java.text.SimpleDateFormat("YYYY-mm-dd HH:mm:ss").parse(start).getTime(); 
+            System.out.println(epoch);
+
             Element testSuiteElement = (Element) sourceSuite;
             TestSuite testSuite = new TestSuite(
-                0,
-                Integer.parseInt(testSuiteElement.getElementsByTagName("ElapsedTime").item(0).getTextContent()),
+                epoch,
+                epoch + Integer.parseInt(testSuiteElement.getElementsByTagName("ElapsedTime").item(0).getTextContent()),
                 testSuiteElement.getElementsByTagName("Name").item(0).getTextContent(),
                 tests);
 
@@ -132,19 +144,30 @@ public class App
                 testCaseElement.appendChild(stepsElement);
 
                 Element attachmentsElement = output.createElement("attachments");
+                Element  attachmentElement = output.createElement("attachment");
+                Attr             titleAttr = output.createAttribute("title");
+                titleAttr.setValue("Screenshot");
+                attachmentElement.setAttributeNode(titleAttr);
+                Attr            sourceAttr = output.createAttribute("source");
+                sourceAttr.setValue(uuid.toString()+"-attachment.png");
+                attachmentElement.setAttributeNode(sourceAttr);
+                Attr              typeAttr = output.createAttribute("type");
+                typeAttr.setValue("image/png");
+                attachmentElement.setAttributeNode(typeAttr);
+                attachmentsElement.appendChild(attachmentElement);
                 testCaseElement.appendChild(attachmentsElement);
             }
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(output);
-            StreamResult result = new StreamResult(new File("testresults/12346-testsuite.xml"));
+            StreamResult result = new StreamResult(new File("testresults/123468-testsuite.xml"));
             transformer.transform(source, result);
 
             StreamResult consoleResult = new StreamResult(System.out);
             transformer.transform(source, consoleResult);
         } catch (Exception e) {
-            //TODO: handle exception
+        System.out.println(e);
         }
 
     }
